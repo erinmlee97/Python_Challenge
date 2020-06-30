@@ -11,6 +11,8 @@ import csv
 
 #My Variables
 VoteTotal = 0
+Candidates = []
+
 
 #Set path for files
 csvpath = os.path.join("Resources", "election_data.csv")
@@ -30,7 +32,12 @@ with open (csvpath, 'r') as csvfile:
         VoteTotal = VoteTotal + 1
 
         #List of candidates who received a vote
+        candidate = row[2]
+        Candidates.append(candidate)
+        
 
-
+    print("Election Results")
+    print("------------------------------------------------------------------")
     print(f"Total Votes: {VoteTotal}")
-
+    print("------------------------------------------------------------------")
+    print(f"{candidate}")
