@@ -12,6 +12,8 @@ import csv
 #My Variables
 VoteTotal = 0
 Candidates = []
+CandidateVotes = []
+Winner = 0
 
 
 #Set path for files
@@ -31,13 +33,23 @@ with open (csvpath, 'r') as csvfile:
         #Find the total numbers of votes cast
         VoteTotal = VoteTotal + 1
 
-        #List of candidates who received a vote
+        #List of candidates who received a vote and # of votes they received 
         candidate = row[2]
-        Candidates.append(candidate)
+        if candidate in Candidates:
+            CandidateVotes[Candidates.index(candidate)] = CandidateVotes[Candidates.index(candidate)] + 1
+        else:
+             Candidates.append(candidate)
+             CandidateVotes.append(1)
+
+        #Find percentage of votes won for each candidate
         
+
 
     print("Election Results")
     print("------------------------------------------------------------------")
     print(f"Total Votes: {VoteTotal}")
     print("------------------------------------------------------------------")
-    print(f"{candidate}")
+    print(f"{Candidates}")
+    print("------------------------------------------------------------------")
+    print()
+    print("------------------------------------------------------------------")
