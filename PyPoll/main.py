@@ -61,3 +61,14 @@ with open (csvpath, 'r') as csvfile:
     print("------------------------------------------------------------------")
     print(f"Winner: {Winner}")
     
+#Add analysis to election_data text file
+with open (writepath, "w", newline='') as txtfile:
+    txtfile.write(f"Election Results\n")
+    txtfile.write(f"------------------------------------------------------------------\n")
+    txtfile.write(f"Total Votes: {VoteTotal}\n")
+    txtfile.write(f"------------------------------------------------------------------\n")
+    for candidate in range(len(Candidates)):
+        txtfile.write(f"{Candidates[candidate]} {percentage[candidate]}% {CandidateVotes[candidate]}\n")
+    txtfile.write(f"------------------------------------------------------------------\n")
+    txtfile.write(f"Winner: {Winner}\n")
+    txtfile.write(f"------------------------------------------------------------------")
