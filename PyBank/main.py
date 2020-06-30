@@ -22,8 +22,9 @@ minprofitchange = 0
 minprofitmonth = 0
 AveragePL = 0
 
-#Set path for file
+#Set path for files
 csvpath = os.path.join("Resources", "budget_data.csv")
+writepath= os.path.join("analysis", "fianacial_analysis.text")
 
 #Open the CSV file
 with open (csvpath, 'r') as csvfile:
@@ -57,12 +58,31 @@ with open (csvpath, 'r') as csvfile:
             minprofitchange = PLchange
             minprofitmonth = row[0]
 
-    AveragePL = (sum(P_L)/len(P_L))
+    #Find the average change over entire period
+    AveragePL = round((sum(P_L)/len(P_L)),2)
+
+    #Print Analysis
+    print("Financial Analysis")
+    print("-------------------------------------------------------")
+    print(f"Total Months: {Total_Months}")
+    print(f"Total:  ${Total_Profit}")
+    print(f"Average Change: ${AveragePL}")
+    print(f"Greatest Increase in Profits: {maxprofitmonth} ${maxprofitchange}")
+    print(f"Greatest Decrease in Profits: {minprofitmonth} ${minprofitchange}")
+
+#Add analysis to financial_analysis text file
+with open (writepath, "w", newline='') as txtfile:
+    
+    txtfile.write(f"Fianancial Analysis\n")
+    txtfile.write(f"-------------------------------------------------------------------\n")
+    txtfile.write(f"Total Months: {Total_Months}\n") 
+    txtfile.write(f"Total:  ${Total_Profit}\n")
+    txtfile.write(f"Average Change: ${AveragePL}\n")
+    txtfile.write(f"Greatest Increase in Profits: {maxprofitmonth} ${maxprofitchange}\n")
+    txtfile.write(f"Greatest Decrease in Profits: {minprofitmonth} ${minprofitchange}\n")
 
 
 
-    print(int(Total_Months))
-    print(int(Total_Profit))
 
     
 
