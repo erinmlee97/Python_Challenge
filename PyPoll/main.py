@@ -13,7 +13,8 @@ import csv
 VoteTotal = 0
 Candidates = []
 CandidateVotes = []
-Winner = 0
+percentage = []
+PopularVote = 0
 
 
 #Set path for files
@@ -41,15 +42,23 @@ with open (csvpath, 'r') as csvfile:
              Candidates.append(candidate)
              CandidateVotes.append(1)
 
-        #Find percentage of votes won for each candidate
-        
+    #Find percentage of votes won for each candidate
+    for candidate in range(len(Candidates)):
+        percentages = int((CandidateVotes[candidate] / VoteTotal )*100)
+        percentage.append(percentages)
+
+        if (CandidateVotes[candidate] > PopularVote):
+            PopularVote = CandidateVotes[candidate]
+            Winner = Candidates[candidate]
 
 
     print("Election Results")
     print("------------------------------------------------------------------")
     print(f"Total Votes: {VoteTotal}")
     print("------------------------------------------------------------------")
-    print(f"{Candidates}")
+    print(f"{Candidates} {CandidateVotes}")
     print("------------------------------------------------------------------")
-    print()
+    print(percentage)
     print("------------------------------------------------------------------")
+    print(f"Winner: {Winner}")
+    
