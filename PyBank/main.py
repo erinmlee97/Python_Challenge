@@ -14,9 +14,13 @@ Total_Months = 0
 Total_Profit = 0
 previousday = 0
 PLchange = 0
-Average_Change = 0
 Dates = []
 P_L = []
+maxprofitchange = 0
+maxprofitmonth = 0
+minprofitchange = 0
+minprofitmonth = 0
+AveragePL = 0
 
 #Set path for file
 csvpath = os.path.join("Resources", "budget_data.csv")
@@ -44,7 +48,17 @@ with open (csvpath, 'r') as csvfile:
         Dates = Dates + [row[0]]
 
         #Find the greatest increase in profits
-        
+        if (PLchange > maxprofitchange):
+            maxprofitchange = PLchange
+            maxprofitmonth = row[0]
+
+        #Find the greatest decrease in profits
+        if (PLchange < minprofitchange):
+            minprofitchange = PLchange
+            minprofitmonth = row[0]
+
+    AveragePL = (sum(P_L)/len(P_L))
+
 
 
     print(int(Total_Months))
