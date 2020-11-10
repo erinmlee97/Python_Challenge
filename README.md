@@ -22,13 +22,13 @@ Using the budget_data.csv, I was able to find the following:
 
 ### Analysis
 
-Fianancial Analysis
+``` Fianancial Analysis
 -------------------------------------------------------------------
 Total Months: 86
 Total:  $38382578
 Average Change: $7803.48
 Greatest Increase in Profits: Feb-2012 $1926159
-Greatest Decrease in Profits: Sep-2013 $-2196167
+Greatest Decrease in Profits: Sep-2013 $-2196167 ```
 
 
 ## PyPoll
@@ -42,7 +42,7 @@ Using the election_data.csv, I was able to find the following:
 
 ### Analysis
 
-Election Results
+```Election Results
 ------------------------------------------------------------------
 Total Votes: 3521001
 ------------------------------------------------------------------
@@ -52,7 +52,7 @@ Li 13% 492940
 O'Tooley 2% 105630
 ------------------------------------------------------------------
 Winner: Khan
-------------------------------------------------------------------
+------------------------------------------------------------------```
 
 
 
