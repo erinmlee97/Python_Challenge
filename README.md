@@ -7,8 +7,8 @@ In this challenge, I used pandas to read in a csv file. Using the different csv 
 
 ## Data
 
-budget_data.csv
-election_data.csv
+* budget_data.csv
+* election_data.csv
 
 ## PyBank
 
