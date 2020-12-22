@@ -1,15 +1,14 @@
 # Python_Challenge
 Python Challenge
 
-# Python Homework - Py Me Up, Charlie
-
 ## Background
 
-Well... you've made it!
+In this challenge, I used pandas to read in a csv file. Using the different csv files, I was able to use functions to determine certain variables within the data.
 
-It's time to put away the Excel sheet and join the big leagues. Welcome to the world of programming with Python. In this homework assignment, you'll be using the concepts you've learned to complete the **two** Python Challenges, PyBank and PyPoll.
+## Data
 
-Both of these challenges encompasses a real-world situation where your newfound Python scripting skills can come in handy. These challenges are far from easy so expect some hard work ahead!
+budget_data.csv
+election_data.csv
 
 ## PyBank
 
@@ -55,9 +54,3 @@ O'Tooley 2% 105630
 Winner: Khan
 ------------------------------------------------------------------
 ```
-
-
-
-## Copyright
-
-Trilogy Education Services © 2019. All Rights Reserved.
